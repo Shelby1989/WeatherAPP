@@ -58,3 +58,11 @@ p {
     list-style: none;
     font-size: 18px;
 }
+
+.weatherApp {
+    max-width: 750px;
+    margin: 50px auto;
+    border: 2px solid #dadde1;
+    border-radius: 10px;
+    padding: 10px;
+    }
