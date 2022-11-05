@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/8c06112a32.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+    <title>Weather App</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-6">
+                <h1 id="city">
+                    <div class="sun4"><i class="fa-regular fa-sun"></i></div> Hershey
+
+                </h1>
+            </div>
+
+            <div class="col-6">
+                <h2>
+                    <strong><span id="temp"> 25 </span>&#176 </strong>C| F
+                </h2>
+                <ul>
+                    <li>
+                        Clear
+                    </li>
+                    <li>
+                        Precipitation: 5%
+                    </li>
+                    <li>
+                        Humidity: 40%
+                    </li>
+                    <li>
+                        Wind: 5 km/h
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h4>
+            current date
+        </h4>
+
+        <form class="searchForm" id="searchForm">
+            <input type="text" placeholder="Search for a city" autocomplete="off" autofocus="on" id="searchTextInput" />
+            <input type="submit" value="Search" />
+        </form>
+
+
+
+        <p class="iconPics">
+        <div class="row">
+            <div class="col-2">
+                Monday
+            </div>
+
+            <div class="col-2">
+                Tuesday
+            </div>
+
+            <div class="col-2">
+                Wednesday
+            </div>
+
+            <div class="col-2">
+                Thursday
+            </div>
+
+            <div class="col-2">
+                Friday
+            </div>
+
+            <div class="col-2">
+                Saturday
+            </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col-2">
+                <div class="icon-sun1">
+                    <i class="fa-regular fa-sun"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="icon-sun2">
+                    <i class="fa-regular fa-sun"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="rain">
+                    <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="storm">
+                    <i class="fa-solid fa-cloud-bolt"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="icon-sun3">
+                    <i class="fa-regular fa-sun"></i>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="cloudy">
+                    <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+            </div>
+        </div>
+
+        </p>
+
+
+
+        <div class="row">
+            <div class="col-2">
+                High <strong> 28 C &#176</strong>
+                Low <em> 22 C &#176</em>
+            </div>
+
+            <div class="col-2">
+                High <strong> 30 C &#176</strong>
+                Low <em> 20 C &#176</em>
+            </div>
+
+            <div class="col-2">
+                High <strong> 18 C &#176</strong>
+                Low <em> 10 C &#176</em>
+            </div>
+
+            <div class="col-2">
+                High <strong> 15 C &#176</strong>
+                Low <em> 10 C &#176</em>
+            </div>
+
+            <div class="col-2">
+                High <strong> 25 C &#176</strong>
+                Low <em> 18 C &#176</em>
+            </div>
+
+            <div class="col-2">
+                High <strong> 23 C &#176</strong>
+                Low <em> 15 C &#176</em>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="currentLocation">Current Location</button>
+        <script src="src/index.js"></script>
+    </div>
+</body>
+
+</html>

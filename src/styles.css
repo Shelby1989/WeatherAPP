@@ -1,0 +1,55 @@
+h1,
+h2 {
+    padding-top: 100px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h3 {
+    font-weight: lighter;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+p {
+    padding: 50px;
+}
+
+.icon-sun1 {
+    color: rgb(228, 206, 15);
+    font-size: 50px;
+
+}
+
+.icon-sun2 {
+    color: rgb(228, 206, 15);
+    font-size: 50px;
+}
+
+.rain {
+    color: rgb(12, 143, 204);
+    font-size: 50px;
+}
+
+.storm {
+    color: slategray;
+    font-size: 50px;
+}
+
+.icon-sun3 {
+    color: rgb(228, 206, 15);
+    font-size: 50px;
+}
+
+.cloudy {
+    color: darkgrey;
+    font-size: 50px;
+}
+
+.sun4 {
+    color: rgb(228, 206, 15);
+}
+
+.iconPics {
+    margin-bottom: 0;
+    padding: 30px 0;
+}
