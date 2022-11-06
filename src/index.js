@@ -18,9 +18,15 @@ h2.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+ 
   document.querySelector("#temp").innerHTML = Math.round(
-  response.data.main.temp
-  );
+  response.data.main.temp);
+
+  document.querySelector("#description").innerHTML = response.data.weather[0].description;
+
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed)
 }
 function searchLocation(position) {
   let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
