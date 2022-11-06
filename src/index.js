@@ -20,9 +20,10 @@ function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#weathericon");
 
   document.querySelector("#city").innerHTML = response.data.name;
+
+  celsiusTemp = response.data.main.temp;
  
-  document.querySelector("#temp").innerHTML = Math.round(
-  response.data.main.temp);
+  document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
 
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
 
@@ -60,8 +61,24 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let currentLocationButton = document.querySelector("#currentLocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let celsiusTemp = null;
+
 
 let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", submitSearch);
@@ -70,3 +87,9 @@ let city = "Hershey";
 let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeatherCondition);
+
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp)
+
+let celsiusLink = document.querySelector("#celsiusLink")
+celsiusLink.addEventListener("click", showCelsiusTemp);
