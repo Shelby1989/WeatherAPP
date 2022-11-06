@@ -63,6 +63,8 @@ function searchCity(city) {
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
@@ -70,6 +72,8 @@ function showFahrenheitTemp(event) {
 
 function showCelsiusTemp(event) {
   event.preventDefault();
+    celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temp");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
