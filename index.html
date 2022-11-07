@@ -38,10 +38,10 @@
             </div>
 
             <div class="col-6">
-                <h2>
+                <h2 class="degree-symbols">
                     <strong><span id="temp"> 25</span>&#176</strong> <a href="#" id="celsiusLink" class="active">C</a> | <a href="#" id="fahrenheitLink">F</a>
                 </h2>
-                <ul>
+                <ul class="weather-description">
                     <li id="description">
                         Clear
                     </li>
@@ -66,113 +66,33 @@
             <span><button type="button" class="btn btn-primary" id="currentLocation">Current Location</button></span>
         </form>
 
-
-        <p class="iconPics">
-        <div class="row">
+        <div class="weather-forecast">
+         <div class="row">
             <div class="col-2">
+                <dive class="weather-forecast-date">
                 Monday
-            </div>
-
-            <div class="col-2">
-                Tuesday
-            </div>
-
-            <div class="col-2">
-                Wednesday
-            </div>
-
-            <div class="col-2">
-                Thursday
-            </div>
-
-            <div class="col-2">
-                Friday
-            </div>
-
-            <div class="col-2">
-                Saturday
+               </dive>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="50"/> <br/>
+                <div class="weather-forecast-temperature">
+                <span class="weather-temp-high">
+                   <strong>28</strong> 
+                </span><strong>&#176</strong>
+                    |
+                <span class="weather-temp-low">
+                    22
+                </span>&#176
+                </div>
             </div>
         </div>
+       </div>
+        
+        
         <br />
 
-
-        <div class="row">
-            <div class="col-2">
-                <div class="icon-sun1">
-                    <i class="fa-regular fa-sun"></i>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="icon-sun2">
-                    <i class="fa-regular fa-sun"></i>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="rain">
-                    <i class="fa-solid fa-cloud-showers-heavy"></i>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="storm">
-                    <i class="fa-solid fa-cloud-bolt"></i>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="icon-sun3">
-                    <i class="fa-regular fa-sun"></i>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <div class="cloudy">
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
-                </div>
-            </div>
-        </div>
-
-        </p>
-
-
-
-        <div class="row">
-            <div class="col-2">
-                High <strong> 28&#176 C | F</strong>
-            </br>Low <em> 22&#176 C | F</em>
-            </div>
-
-            <div class="col-2">
-                High <strong> 30&#176 C | F</strong>
-            </br>Low <em> 20&#176 C | F</em>
-            </div>
-
-            <div class="col-2">
-                High <strong> 18&#176 C | F</strong>
-            </br>Low <em> 10&#176 C | F</em>
-            </div>
-
-            <div class="col-2">
-                High <strong> 15&#176 C | F</strong>
-            </br>Low <em> 10&#176 C | F</em>
-            </div>
-
-            <div class="col-2">
-                High <strong> 25&#176 C | F</strong>
-            </br>Low <em> 18&#176 C | F</em>
-            </div>
-
-            <div class="col-2">
-                High <strong> 23&#176 C | F</strong>
-            </br>Low <em> 15&#176 C | F</em>
-            </div>                    
-        </div>
            <a href="https://github.com/Shelby1989/WeatherAPP" target="_blank">My open source code.</a>
         <script src="src/index.js"></script>
     </div>
-    </div>
+ </div>
 </body>
 
 </html>

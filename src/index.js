@@ -16,6 +16,8 @@ let day = days[now.getDay()];
 h2.innerHTML = `${day} ${hours}:${minutes}`;
 
 
+
+
 function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#weathericon");
 
@@ -33,6 +35,7 @@ function displayWeatherCondition(response) {
 
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
 }
 function searchLocation(position) {
   let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
