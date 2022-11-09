@@ -27,16 +27,16 @@ function displayForecast(response){
   `
             <div class="col-2">
                 <div class="weather-forecast-date">
-                ${forecastDay.dt}
+                ${forecastDay.data.time}
                </div>
-                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="50"/> <br/>
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="" width="50"/> <br/>
                 <div class="weather-forecast-temperature">
                 <span class="weather-temp-high">
-                   <strong>${forecastDay.temp.max}</strong> 
+                   <strong>${forecastDay.data.temperature.maximum}</strong> 
                 </span><strong>&#176</strong>
                     |
                 <span class="weather-temp-low">
-                    ${forecastDay.temp.min}
+                    ${forecastDay.data.temperature.minimum}
                 </span>&#176
                 </div>
             </div>
@@ -49,37 +49,37 @@ forecastElement.innerHTML = forecastHTML;
 
 function getForecast(Coordinates){
   let apiKey = "904614d4t1a13od039be3fd670fed7af";
-  `https://api.shecodes.io/weather/v1/forecast?lon=${Coordinates.lon}&lat=${Coordinates.lat}&key=${apiKey}`
-  displayForecast(response);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${Coordinates.longitude}&lat=${Coordinates.latitude}&key=${apiKey}&units=metric`;
+ 
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#weathericon");
 
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
 
-  celsiusTemp = response.data.main.temp;
+  celsiusTemp = response.data.temperature.current;
  
   document.querySelector("#temp").innerHTML = Math.round(celsiusTemp);
 
-  document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  document.querySelector("#description").innerHTML = response.data.condition.description;
 
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML = response.data.temperature.humidity;
 
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+                                  
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.description);
 
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.coord)
+  getForecast(response.data.coordinates)
 
 
 }
 function searchLocation(position) {
-  let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
-  position.coords.latitude
-  }&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "904614d4t1a13od039be3fd670fed7af";
+  let apiUrl =  `https://api.shecodes.io/weather/v1/current?lon=${position.longitude}&lat=${position.latitude}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -97,8 +97,8 @@ function submitSearch(event) {
 }
 
 function searchCity(city) {
-  let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "904614d4t1a13od039be3fd670fed7af";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -129,8 +129,8 @@ let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", submitSearch);
 
 let city = "Hershey";
-let apiKey = "880be6f76144feab4c58ddbc72edd9b8";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+let apiKey = "904614d4t1a13od039be3fd670fed7af";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 axios.get(apiUrl).then(displayWeatherCondition);
 
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
