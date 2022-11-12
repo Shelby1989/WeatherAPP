@@ -87,9 +87,9 @@ function displayWeatherCondition(response) {
 
 
 }
-function searchLocation(position) {
+function searchLocation(city) {
   let apiKey = "904614d4t1a13od039be3fd670fed7af";
-  let apiUrl =  `https://api.shecodes.io/weather/v1/current?lon=${position.longitude}&lat=${position.latitude}&key=${apiKey}&units=metric`;
+  let apiUrl =  `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
