@@ -60,9 +60,15 @@ function formatTime(timeStamp){
 function getForecast(Coordinates){
   let apiKey = "904614d4t1a13od039be3fd670fed7af";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${Coordinates.longitude}&lat=${Coordinates.latitude}&key=${apiKey}&units=metric`;
- 
 
   axios.get(apiUrl).then(displayForecast);
+}
+
+function handleCoordinates(coordinates){
+  let apiKey = "904614d4t1a13od039be3fd670fed7af";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&key=${apiKey}&units=metric`;
+
+  axios.get(apiURL).then(displayWeatherCondition);
 }
 
 function displayWeatherCondition(response) {
@@ -97,7 +103,7 @@ function searchLocation(city) {
 
 function getCurrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
+  navigator.geolocation.getCurrentPosition(handleCoordinates);
 }
 
 function submitSearch(event) {
